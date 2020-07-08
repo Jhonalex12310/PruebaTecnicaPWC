@@ -1,0 +1,47 @@
+<div>
+  <img class="logo img-responsive" src="https://www.pwcimpuestosenlinea.co/co/img/new-store-logo-1592580756.jpg" alt="Print alpha" width="580" height="105">
+</div>
+<div class="centrado">
+    <span> PwC Colombia </span>    
+</div>
+<div class="displayTable">
+    <div class="displayTableCell">
+  
+      <div class="authBlock">
+        <h3>Ingreso</h3>
+        <div class="formGroup">
+          <input type="text" class="formControl" placeholder="Usuario" #userName required>
+        </div>
+  
+        <div class="formGroup">
+          <input type="password" class="formControl" placeholder="Contraseña" #userPassword required>
+        </div>  
+      
+        <div class="formGroup">
+          <input type="button" class="btn btnPrimary" value="Ingresar" (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
+  
+        <div class="formGroup">
+          <span class="or"><span class="orInner">O</span></span>
+        </div>  
+        
+        <div class="formGroup">
+          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Ingresar con Google
+          </button>
+        </div>        
+      </div>  
+    </div>
+</div>
+  
+<div class="centrado">
+  <div id="socialfollow" class="socialfollowInner">
+    <span>Síguenos PwC Colombia </span>
+    <a href="https://www.facebook.com/pwccolombia/" target="_blank" title="Facebook Follow" class="socialfollow- Facebook Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_facebook.png"></a>
+    <a href="https://twitter.com/PwC_Colombia" target="_blank" title="Twitter Follow" class="socialfollow- Twitter Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_twitter.png"></a>
+    <a href="https://www.linkedin.com/company/pwc-colombia" target="_blank" title="Linkedin Follow" class="socialfollow- Linkedin Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_linkedin.png"></a>
+    <a href="https://www.youtube.com/user/PwCColombia" target="_blank" title="Youtube Follow" class="socialfollow- YouTube Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_youtube.png"></a>
+    <a href="https://www.instagram.com/pwc_colombia/" target="_blank" title="Instagram Follow" class="socialfollow- Instagram Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_instagram.png"></a>
+  </div>
+</div>

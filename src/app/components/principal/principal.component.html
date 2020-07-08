@@ -1,0 +1,102 @@
+<!-- Top navigation -->
+<div  *ngIf="authService.userData as user">
+  <img class="logo img-responsive" src="https://www.pwcimpuestosenlinea.co/co/img/new-store-logo-1592580756.jpg" alt="Print alpha" width="580" height="105">
+  <div class="right">
+    <p>Usuario: <strong>{{user.email}}</strong></p>
+  </div>  
+</div>
+
+<div class="centrado">
+  <button mat-button [matMenuTriggerFor]="opcion1"  *ngIf="visualizacion1">Inicio</button>
+  <mat-menu #opcion1="matMenu" class="centrado">
+    <button class="centrado" mat-menu-item [matMenuTriggerFor]="subopcion1">Misión</button>
+    <button class="centrado" mat-menu-item [matMenuTriggerFor]="subopcion2">Visión</button>
+  </mat-menu>
+
+  <mat-menu #subopcion1="matMenu" class="centrado">
+    <a class="centrado" mat-menu-item >Nuestra Actualidad</a>
+    <a class="centrado" mat-menu-item >Misión Corporativa</a>
+  </mat-menu>
+
+  <mat-menu #subopcion2="matMenu" class="centrado">
+    <a class="centrado" mat-menu-item>Nuestro Destino</a>
+    <a class="centrado" mat-menu-item>Visión Corporativa</a>
+  </mat-menu> 
+
+  <button mat-button [matMenuTriggerFor]="opcion2"  *ngIf="visualizacion2">Nuestro portafolio</button>
+
+  <mat-menu #opcion2="matMenu" class="centrado">
+    <button class="centrado" mat-menu-item [matMenuTriggerFor]="subopcion3">Servicios</button>
+    <button class="centrado" mat-menu-item [matMenuTriggerFor]="subopcion4">Productos</button>
+  </mat-menu>
+
+  <mat-menu #subopcion3="matMenu" class="centrado">
+    <a class="centrado" mat-menu-item >Consultoría</a>
+    <a class="centrado" mat-menu-item >Auditoría</a>
+  </mat-menu>
+
+  <mat-menu #subopcion4="matMenu" class="centrado">
+    <a class="centrado" mat-menu-item>Software a la medida</a>
+    <a class="centrado" mat-menu-item>Aplicaciones Android - IOS</a>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="opcion3"  *ngIf="visualizacion3">Nuestros Clientes</button>
+
+  <mat-menu #opcion3="matMenu" class="centrado">
+    <button class="centrado" mat-menu-item [matMenuTriggerFor]="subopcion5">Nacionales</button>
+    <button class="centrado" mat-menu-item [matMenuTriggerFor]="subopcion6">Internacionales</button>
+  </mat-menu>
+
+  <mat-menu #subopcion5="matMenu" class="centrado">
+    <a class="centrado" mat-menu-item >Bavaria</a>
+    <a class="centrado" mat-menu-item >Postobón</a>
+    <a class="centrado" mat-menu-item >Ecopetrol</a>
+    <a class="centrado" mat-menu-item >Universidad Javeriana</a>
+  </mat-menu>
+
+  <mat-menu #subopcion6="matMenu" class="centrado">
+    <a class="centrado" mat-menu-item>Google</a>
+    <a class="centrado" mat-menu-item>Apple</a>
+    <a class="centrado" mat-menu-item >Dell</a>
+  </mat-menu>
+
+  <button mat-button (click)="authService.SignOut()"  *ngIf="visualizacion4">Salir</button>
+</div>
+
+
+<div class="displayTable">
+  <div class="displayTableCell">
+  
+    <div class="authBlock">
+      <h3>Sección Parametrizable </h3>
+      <div class="formGroup">
+        <p>Esta sección permite visualizar cambios sobre la página, dependiendo la selección hecha por el usuario</p>
+      </div>
+      <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Nombre" #userName required  [(ngModel)]="user">
+      </div>
+      <div class="formGroup">
+        <select class="formControl" [(ngModel)]="seleccion" >
+          <option class="formControl" *ngFor="let item of lista" value="{{item.valor}}">{{item.descripcion}}</option>
+        </select> 
+      </div>  
+     
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Cambiar" (click)="iniciar()">
+      </div>
+
+    </div>  
+  </div>
+</div>
+
+<div class="centrado">
+  <div id="socialfollow" class="socialfollowInner">
+    <span *ngIf="visualizacion2">Síguenos PwC Colombia </span>
+    <a href="https://www.facebook.com/pwccolombia/" target="_blank" title="Facebook Follow" class="socialfollow- Facebook Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_facebook.png" *ngIf="visualizacion1"></a>
+    <a href="https://twitter.com/PwC_Colombia" target="_blank" title="Twitter Follow" class="socialfollow- Twitter Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_twitter.png" *ngIf="visualizacion2"></a>
+    <a href="https://www.linkedin.com/company/pwc-colombia" target="_blank" title="Linkedin Follow" class="socialfollow- Linkedin Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_linkedin.png" *ngIf="visualizacion3"></a>
+    <a href="https://www.youtube.com/user/PwCColombia" target="_blank" title="Youtube Follow" class="socialfollow- YouTube Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_youtube.png" *ngIf="visualizacion4"></a>
+    <a href="https://www.instagram.com/pwc_colombia/" target="_blank" title="Instagram Follow" class="socialfollow- Instagram Follow"><img src="https://www.pwc.com/content/pwc/script/network/follow/follow_instagram.png" *ngIf="visualizacion1"></a>
+  </div>
+</div>
+  
